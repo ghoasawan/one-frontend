@@ -3,17 +3,7 @@
 import React, { useState } from "react";
 import { Field, FieldProps } from "formik";
 import { Eye, EyeOff } from "lucide-react";
-
-export interface InputFieldProps {
-  label: string;
-  name: string;
-  type?: string;
-  icon: React.ReactNode;
-  placeholder?: string;
-  error?: string;
-  touched?: boolean;
-}
-
+import {InputFieldProps} from "@/src/interfaces/index"
 export function InputField({
   label,
   name,
