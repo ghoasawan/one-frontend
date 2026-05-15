@@ -34,17 +34,18 @@ export interface LoginRequest {
 export interface RegisterRequest {
   name: string;
   email: string;
-  phoneNumber: number;
+  phone: string;
   password: string;
 }
 
 
 
 export interface AuthResponse {
+  message:string,
   user: {
     id: string;
     name: string;
     email: string;
   };
-  token: string;
+  token?: string;
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AxiosProvider } from "@/src/context/AxiosContext";
+import { Toaster } from "@/src/components/ui/sonner"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col font-sans">
         <AxiosProvider>{children}</AxiosProvider>
+        <Toaster/>
       </body>
     </html>
   );

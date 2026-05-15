@@ -1,22 +1,19 @@
 "use client"
 
 import React, { createContext, useContext, ReactNode } from "react"
-import { AxiosClient } from "@/src/services/axiosclient"
-import { AuthService } from "@/src/services/auth.service"
+import { authService } from "@/src/services/index"
+import {AuthService} from "@/src/services/auth.service"
 
 interface AxiosContextType {
-  axiosClient: AxiosClient
-  authService: AuthService
+  authService:AuthService
 }
 
 const AxiosContext = createContext<AxiosContextType | undefined>(undefined)
 
 export function AxiosProvider({ children }: { children: ReactNode }) {
-  const axiosClient = new AxiosClient()
-  const authService = new AuthService(axiosClient)
 
   return (
-    <AxiosContext.Provider value={{ axiosClient, authService }}>
+    <AxiosContext.Provider value={{authService }}>
       {children}
     </AxiosContext.Provider>
   )
