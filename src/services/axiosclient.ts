@@ -7,15 +7,15 @@ export class AxiosClient implements ApiClientInterface {
   constructor() {
     const baseURL = process.env.NEXT_PUBLIC_API_URL || "/";
     this.client = axios.create({ baseURL, withCredentials: true });
-    this.client.interceptors.response.use(
-      (response) => response,
-      (error) => {
-        const errorMessage =
-          error.response?.data?.message || "Something went wrong";
-        console.error("[API Error]:", errorMessage);
-        return Promise.reject(errorMessage);
-      },
-    );
+    // this.client.interceptors.response.use(
+    //   (response) => response,
+    //   (error) => {
+    //     const errorMessage =
+    //       error.response?.data?.message || "Something went wrong";
+    //     console.error("[API Error]:", errorMessage);
+    //     return Promise.reject(errorMessage);
+    //   },
+    // );
   }
 
   async get<T = any>(url: string, config?: Record<string, any>): Promise<T> {

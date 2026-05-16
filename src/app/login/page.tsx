@@ -53,6 +53,9 @@ export default function Login() {
           validationSchema={loginValidationSchema}
           onSubmit={async (values, { setSubmitting }) => {
             try {
+              setVerificationError("");
+              setVerificationEmail("");
+              setShowVerificationModal(false);
               await authService.login(values);
               
               toast.success("Login successful!", {
@@ -61,20 +64,21 @@ export default function Login() {
               
               router.push("/");
             } catch (error: any) {
-              const errorMessage = typeof error === "string" ? error : "Invalid email or password. Please try again.";
-              
-              // Check if error indicates email needs verification
-              if (errorMessage.toLowerCase().includes("verify") || errorMessage.toLowerCase().includes("not verified")) {
+              const statusCode = error?.response?.status;
+              const errorMessage =
+                error?.response?.data?.message ||
+                "Invalid email or password. Please try again.";
+
+              if (statusCode === 403) {
                 setVerificationEmail(values.email);
                 setVerificationError("Your email is not verified");
-                setShowVerificationModal(true);
+                toast.error("Email not verified", {
+                  description: "Click the verification link shown below.",
+                });
               } else {
                 setVerificationError("");
+                toast.error(errorMessage);
               }
-              
-              toast.error("Login failed", {
-                description: errorMessage,
-              });
             } finally {
               setSubmitting(false);
             }

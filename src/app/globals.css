@@ -128,3 +128,89 @@
     @apply font-sans;
   }
 }
+
+@layer components {
+  .cn-toast {
+    min-width: 320px;
+    max-width: 420px;
+  }
+
+  .cn-toast .cn-toast-icon svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .cn-toast-success {
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.95), rgba(22, 163, 74, 0.9));
+    border-color: rgba(52, 211, 153, 0.35);
+    color: #ecfdf5;
+  }
+
+  .cn-toast-success .cn-toast-description {
+    color: rgba(236, 253, 245, 0.88);
+  }
+
+  .cn-toast-error {
+    background: linear-gradient(135deg, rgba(127, 29, 29, 0.96), rgba(220, 38, 38, 0.9));
+    border-color: rgba(252, 165, 165, 0.35);
+    color: #fef2f2;
+  }
+
+  .cn-toast-error .cn-toast-description {
+    color: rgba(254, 242, 242, 0.9);
+  }
+
+  .cn-toast-warning {
+    background: linear-gradient(135deg, rgba(120, 53, 15, 0.96), rgba(217, 119, 6, 0.9));
+    border-color: rgba(253, 186, 116, 0.35);
+    color: #fffbeb;
+  }
+
+  .cn-toast-warning .cn-toast-description {
+    color: rgba(255, 251, 235, 0.9);
+  }
+
+  .cn-toast-info {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.96), rgba(37, 99, 235, 0.9));
+    border-color: rgba(147, 197, 253, 0.35);
+    color: #eff6ff;
+  }
+
+  .cn-toast-info .cn-toast-description {
+    color: rgba(239, 246, 255, 0.9);
+  }
+
+  [data-sonner-toaster] [data-sonner-toast] {
+    min-width: 320px !important;
+    max-width: 420px !important;
+    border-radius: 0.85rem !important;
+    border-width: 1px !important;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35) !important;
+    backdrop-filter: blur(10px) !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  [data-sonner-toaster] [data-sonner-toast][data-type="success"] {
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.95), rgba(22, 163, 74, 0.9)) !important;
+    border-color: rgba(52, 211, 153, 0.35) !important;
+    color: #ecfdf5 !important;
+  }
+
+  [data-sonner-toaster] [data-sonner-toast][data-type="error"] {
+    background: linear-gradient(135deg, rgba(127, 29, 29, 0.96), rgba(220, 38, 38, 0.9)) !important;
+    border-color: rgba(252, 165, 165, 0.35) !important;
+    color: #fef2f2 !important;
+  }
+
+  [data-sonner-toaster] [data-sonner-toast][data-type="warning"] {
+    background: linear-gradient(135deg, rgba(120, 53, 15, 0.96), rgba(217, 119, 6, 0.9)) !important;
+    border-color: rgba(253, 186, 116, 0.35) !important;
+    color: #fffbeb !important;
+  }
+
+  [data-sonner-toaster] [data-sonner-toast][data-type="info"] {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.96), rgba(37, 99, 235, 0.9)) !important;
+    border-color: rgba(147, 197, 253, 0.35) !important;
+    color: #eff6ff !important;
+  }
+}

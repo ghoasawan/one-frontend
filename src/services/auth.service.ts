@@ -9,6 +9,7 @@ export class AuthService {
 
   async login(data: LoginRequest): Promise<AuthResponse> {
     const response = await this.http.post<AuthResponse>(authEndpoints.login, data);
+    console.log("Login response:", response);
     return response;
   }
 
