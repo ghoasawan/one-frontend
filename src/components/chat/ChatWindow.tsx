@@ -21,10 +21,10 @@ export function ChatWindow({ chat }: ChatWindowProps) {
           </div>
         </div>
         <div className="flex items-center gap-1">
-          <Button variant="ghost" size="icon" className="h-9 w-9 text-zinc-300 hover:bg-zinc-800">
+          <Button variant="ghost" size="icon" className="h-9 w-9 cursor-pointer text-zinc-300 hover:bg-zinc-800">
             <Phone size={16} />
           </Button>
-          <Button variant="ghost" size="icon" className="h-9 w-9 text-zinc-300 hover:bg-zinc-800">
+          <Button variant="ghost" size="icon" className="h-9 w-9 cursor-pointer text-zinc-300 hover:bg-zinc-800">
             <Video size={16} />
           </Button>
         </div>
@@ -41,17 +41,17 @@ export function ChatWindow({ chat }: ChatWindowProps) {
 
       <footer className="border-t border-zinc-800 p-3">
         <div className="flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900 px-2 py-2">
-          <Button variant="ghost" size="icon" className="h-8 w-8 text-zinc-400 hover:bg-zinc-800">
+          <Button variant="ghost" size="icon" className="h-8 w-8 cursor-pointer text-zinc-400 hover:bg-zinc-800">
             <Paperclip size={15} />
           </Button>
           <Input
             placeholder="Write a message..."
             className="h-8 border-0 bg-transparent text-zinc-100 placeholder:text-zinc-500 focus-visible:ring-0"
           />
-          <Button variant="ghost" size="icon" className="h-8 w-8 text-zinc-400 hover:bg-zinc-800">
+          <Button variant="ghost" size="icon" className="h-8 w-8 cursor-pointer text-zinc-400 hover:bg-zinc-800">
             <Smile size={15} />
           </Button>
-          <Button size="icon" className="h-8 w-8 bg-emerald-500 text-emerald-950 hover:bg-emerald-400">
+          <Button size="icon" className="h-8 w-8 cursor-pointer bg-emerald-500 text-emerald-950 hover:bg-emerald-400">
             <SendHorizontal size={15} />
           </Button>
         </div>
@@ -59,4 +59,3 @@ export function ChatWindow({ chat }: ChatWindowProps) {
     </section>
   );
 }
-

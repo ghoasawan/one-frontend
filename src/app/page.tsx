@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from "react";
 import { ChatSidebar } from "@/src/components/chat/ChatSidebar";
 import { ChatWindow } from "@/src/components/chat/ChatWindow";
+import { MiniSidebar } from "@/src/components/chat/MiniSidebar";
 import { ChatPreview } from "@/src/components/chat/types";
 
 const MOCK_CHATS: ChatPreview[] = [
@@ -47,12 +48,15 @@ export default function HomePage() {
   return (
     <main className="h-screen w-full bg-zinc-950 text-zinc-100">
       <div className="flex h-full w-full">
-        <section className="h-full w-1/4 min-w-[280px] border-r border-zinc-800">
-          <ChatSidebar
-            chats={MOCK_CHATS}
-            activeChatId={activeChatId}
-            onSelectChat={setActiveChatId}
-          />
+        <section className="flex h-full w-1/4 min-w-[320px] border-r border-zinc-800">
+          <MiniSidebar />
+          <div className="min-w-0 flex-1">
+            <ChatSidebar
+              chats={MOCK_CHATS}
+              activeChatId={activeChatId}
+              onSelectChat={setActiveChatId}
+            />
+          </div>
         </section>
         <section className="h-full w-3/4">
           <ChatWindow chat={activeChat} />

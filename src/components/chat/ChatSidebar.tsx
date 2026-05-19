@@ -17,10 +17,10 @@ export function ChatSidebar({ chats, activeChatId, onSelectChat }: ChatSidebarPr
         <div className="mb-3 flex items-center justify-between">
           <h1 className="text-sm font-semibold text-zinc-100">Chats</h1>
           <div className="flex items-center gap-1">
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-zinc-300 hover:bg-zinc-800">
+            <Button variant="ghost" size="icon" className="h-8 w-8 cursor-pointer text-zinc-300 hover:bg-zinc-800">
               <SlidersHorizontal size={15} />
             </Button>
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-zinc-300 hover:bg-zinc-800">
+            <Button variant="ghost" size="icon" className="h-8 w-8 cursor-pointer text-zinc-300 hover:bg-zinc-800">
               <Plus size={16} />
             </Button>
           </div>
@@ -47,4 +47,3 @@ export function ChatSidebar({ chats, activeChatId, onSelectChat }: ChatSidebarPr
     </aside>
   );
 }
-
